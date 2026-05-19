@@ -1,0 +1,945 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.4)), url('../assets/bg-web-fixx.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+
+@media (max-width: 768px) {
+    body {
+        background-attachment: scroll;
+    }
+}
+
+/* ========== NAVIGATION BAR ========== */
+.nav-full {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #354024;
+    padding: 0.5rem 2rem;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+    flex-wrap: wrap;
+}
+
+.logo-web ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 0.5rem;
+    margin: 0;
+    padding: 0;
+}
+
+.logo-web ul li a {
+    color: #E5D7C4;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.nav-container ul {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+}
+
+.nav-container a {
+    position: relative;
+    color: #CFBB99;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+}
+
+.nav-container a:hover {
+    color: #FFD700;
+}
+
+.nav-container a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -4px;
+    width: 0;
+    height: 2px;
+    background-color: #E5D7C4;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-container a:hover::after {
+    width: 100%;
+    background-color: #FFD700;
+}
+
+.get-started a {
+    background-color: #889063;
+    color: #E5D7C4;
+    padding: 8px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.get-started a:hover {
+    background-color: #FFD700;
+    color: #354024;
+}
+
+/* ========== FORM INPUT ========== */
+.body-input {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.4)), url('../assets/bg-web-fixx.png');
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+
+.form-input {
+    max-width: 700px;
+    margin: 100px auto 50px auto;
+    background-color: #CFBB99;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(76, 61, 25, 0.2);
+}
+
+.judul-form {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.judul-form label:first-child {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #354024;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.judul-form label:last-child {
+    font-size: 0.9rem;
+    color: #4C3D19;
+}
+
+.form-input .row {
+    margin-bottom: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.form-input .col-sm-2 {
+    width: 30%;
+    text-align: right;
+    padding-right: 1rem;
+}
+
+.form-input .col-sm-5 {
+    width: 65%;
+}
+
+.form-input .col-form-label {
+    color: #354024;
+    font-weight: 600;
+    margin-bottom: 0;
+    line-height: 38px;
+}
+
+/* INI YANG DIUBAH - SEMUA INPUT TEXT, NUMBER, EMAIL, SELECT JADI SAMA */
+.form-input input[type="text"],
+.form-input input[type="email"],
+.form-input input[type="number"],
+.form-input input[type="date"],
+.form-input select {
+    background-color: #E5D7C4 !important;
+    border: 2px solid #889063 !important;
+    border-radius: 10px !important;
+    padding: 8px 12px !important;
+    width: 100%;
+    color: #4C3D19 !important;
+}
+
+.form-input input:focus,
+.form-input select:focus {
+    outline: none;
+    border-color: #354024 !important;
+}
+
+.form-input select option {
+    background-color: #E5D7C4;
+    color: #4C3D19;
+}
+
+.option-form {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.option-form label {
+    color: #354024;
+    font-weight: 600;
+    width: 30%;
+    text-align: right;
+    padding-right: 1rem;
+}
+
+fieldset {
+    margin-bottom: 1rem;
+}
+
+fieldset .col-form-label {
+    width: 30%;
+    text-align: right;
+    padding-right: 1rem;
+    display: inline-block;
+}
+
+fieldset .col-sm-5 {
+    display: inline-block;
+    width: 65%;
+}
+
+.form-check {
+    margin-bottom: 0.5rem;
+}
+
+.form-check-input {
+    margin-right: 0.5rem;
+}
+
+.form-check-label {
+    color: #4C3D19;
+}
+
+.subres {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.btn-primary {
+    background-color: #354024 !important;
+    border: none !important;
+    padding: 10px 30px !important;
+    border-radius: 30px !important;
+    font-weight: bold !important;
+    color: #E5D7C4 !important;
+    transition: all 0.3s ease !important;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: #889063 !important;
+    transform: translateY(-2px);
+}
+
+/* ================= KONFIRMASI CSS ================= */
+
+.card-info {
+    min-height: 100vh;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent !important;
+    margin-top: 60px;
+}
+
+.card2 {
+    max-width: 550px;
+    width: 100%;
+    margin: 0 auto;
+    background: #CFBB99;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(53, 64, 36, 0.15);
+}
+
+.card2 .card-header {
+    background-color: #354024;
+    color: #F5F0E8;
+    padding: 1.2rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    border: none;
+}
+
+.card2 .card-body {
+    padding: 1.8rem;
+    background-color: #CFBB99;
+}
+
+.table {
+    width: 100%;
+    margin-bottom: 1.5rem;
+    background: transparent !important;
+}
+
+.table tr {
+    border-bottom: 1px solid #889063;
+}
+
+.table tr:last-child {
+    border-bottom: none;
+}
+
+.table td {
+    padding: 12px 8px;
+    background: transparent !important;
+    color: #354024;
+    border: none;
+}
+
+.table td:first-child {
+    font-weight: 600;
+    width: 35%;
+    color: #2c3a1f;
+}
+
+.table td:last-child {
+    color: #3d4a2a;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+.btn-konfirmasi {
+    background: linear-gradient(135deg, #2e7d32 0%, #1b5e20 100%);
+    color: white;
+    border: none;
+    padding: 12px 32px;
+    border-radius: 50px !important;  
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(46, 125, 50, 0.3);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-konfirmasi:hover {
+    background: linear-gradient(135deg, #1b5e20 0%, #0d3d10 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(46, 125, 50, 0.4);
+}
+
+.btn-konfirmasi:active {
+    transform: translateY(0);
+}
+
+.btn-batal {
+   background: linear-gradient(135deg, #c62828 0%, #b71c1c 100%);
+    color: white;
+    border: none;
+    padding: 12px 32px;
+    border-radius: 50px !important;   
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(198, 40, 40, 0.3);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+}
+
+.btn-batal:hover {
+    background: linear-gradient(135deg, #b71c1c 0%, #8e0000 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(198, 40, 40, 0.4);
+    color: white;
+    text-decoration: none;
+}
+
+.btn-batal:active {
+    transform: translateY(0);
+}
+
+@media (max-width: 500px) {
+    .action-buttons {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .btn-konfirmasi, .btn-batal {
+        width: 100%;
+        justify-content: center;
+        padding: 10px 20px;
+    }
+}
+
+.poin-value {
+    color: #2a5c2e;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+input, textarea, select {
+    background: #E8DFD1 !important;
+    border: 1px solid #889063 !important;
+}
+
+/* FOOTER */
+.card-footer{
+    background: #f1f1f1;
+    color: #666;
+    font-size: 18px;
+    font-style: italic;
+    padding: 20px;
+}
+
+body.landing-page {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.3)), url('../assets/bg-web-fixx.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+
+.success-landing {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 2rem 3rem 2rem;
+}
+
+.success-card {
+    background: rgba(207, 187, 153, 0.95);
+    border-radius: 30px;
+    padding: 3rem;
+    max-width: 650px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+    backdrop-filter: blur(5px);
+    border: 1px solid #889063;
+}
+
+.success-card h1 {
+    font-size: 2rem;
+    color: #354024;
+    margin-bottom: 1.5rem;
+}
+
+.poin-box {
+    background: #354024;
+    border-radius: 20px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.poin-label {
+    display: block;
+    color: #E5D7C4;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+}
+
+.poin-amount {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: #FFD700;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.action-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+
+.btn-home, .btn-redeem, .btn-deposit {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-home {
+    background: #889063;
+    color: #E5D7C4;
+}
+
+.btn-home:hover {
+    background: #354024;
+    color: #FFD700;
+}
+
+.btn-redeem {
+    background: #FFD700;
+    color: #354024;
+}
+
+.btn-deposit {
+    background: #354024;
+    color: #E5D7C4;
+}
+
+@media (max-width: 768px) {
+    .nav-full {
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 0.5rem;
+    }
+    
+    .nav-container ul {
+        justify-content: center;
+        gap: 1rem;
+    }
+    
+    .awalan-web .text-index h1 {
+        font-size: 2rem;
+    }
+    
+    .form-input .row {
+        flex-direction: column;
+    }
+    
+    .form-input .col-sm-2,
+    .form-input .col-sm-5 {
+        width: 100%;
+        text-align: left;
+    }
+    
+    .option-form {
+        flex-direction: column;
+    }
+    
+    .option-form label,
+    .option-form select {
+        width: 100%;
+        text-align: left;
+    }
+    
+    .card.text {
+        margin: 100px 1rem 30px 1rem;
+    }
+    
+    .success-card {
+        padding: 2rem;
+        margin: 0 1rem;
+    }
+    
+    .poin-amount {
+        font-size: 2.5rem;
+    }
+    
+    .action-buttons {
+        flex-direction: column;
+    }
+}
+
+/* CONTAINER */
+.container{
+    margin-top: 110px !important;
+    width: 1050px !important;
+    background: rgba(207,187,153,0.96);
+    padding: 28px;
+    border-radius: 24px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.22);
+}
+
+.container h1{
+    color: #2F3E22;
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.btn-success{
+    background: #354024 !important;
+    border: none !important;
+    border-radius: 12px !important;
+    padding: 10px 22px !important;
+    font-size: 17px !important;
+    font-weight: 600 !important;
+    margin-bottom: 22px;
+}
+
+.btn-success:hover{
+    background: #44552f !important;
+}
+
+.table-responsive{
+    border-radius: 18px;
+    overflow: hidden;
+}
+
+.table{
+    margin: 0 !important;
+    background: #f7f1e7 !important;
+}
+
+.table thead th{
+    background: #354024 !important;
+    color: white !important;
+    padding: 14px !important;
+    font-size: 16px;
+    border: none !important;
+    text-align: center;
+}
+
+.table tbody td{
+    background: #EFE7DA !important;
+    color: #3c3427 !important;
+    padding: 14px !important;
+    font-size: 15px;
+    text-align: center;
+    vertical-align: middle;
+    border-color: rgba(53,64,36,0.12) !important;
+}
+
+.table tbody tr:nth-child(even) td{
+    background: #E7DDCD !important;
+}
+
+.table tbody tr:hover td{
+    background: #ddd1be !important;
+}
+
+.table th:first-child,
+.table td:first-child{
+    width: 40px !important;
+    max-width: 40px !important;
+    min-width: 40px !important;
+    white-space: nowrap;
+    text-align: center;
+}
+
+/* BUTTON EDIT */
+.btn-warning{
+    background: #D9A441 !important;
+    border: none !important;
+    color: white !important;
+    border-radius: 10px !important;
+    padding: 6px 12px !important;
+    font-size: 14px !important;
+}
+
+/* BUTTON DELETE */
+.btn-danger{
+    background: #B64545 !important;
+    border: none !important;
+    border-radius: 10px !important;
+    padding: 6px 12px !important;
+    font-size: 14px !important;
+}
+
+/* BUTTON HOVER */
+.btn-warning:hover,
+.btn-danger:hover{
+    opacity: 0.92;
+    transform: scale(1.03);
+}
+
+
+/* EDIT SAMPAH PAGE */
+.form-input {
+    max-width: 650px;
+    margin: 100px auto 50px auto;
+    background: #CFBB99;
+    padding: 2rem 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.judul-form {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #889063;
+}
+
+.judul-form label:first-child {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #354024;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.judul-form label:last-child {
+    font-size: 0.85rem;
+    color: #4C3D19;
+}
+
+.judul-form i {
+    margin-right: 8px;
+}
+
+.row {
+    margin-bottom: 1.2rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.row .col-label {
+    width: 30%;
+    text-align: left;
+    padding-right: 1rem;
+    font-weight: 600;
+    color: #354024;
+}
+
+.row .col-label label {
+    margin-bottom: 0;
+}
+
+.row .col-input {
+    width: 70%;
+}
+
+.form-control,
+select {
+    background-color: #E5D7C4 !important;
+    border: 2px solid #889063 !important;
+    border-radius: 10px !important;
+    padding: 10px 12px !important;
+    width: 100%;
+    color: #4C3D19 !important;
+    font-size: 14px !important;
+}
+
+.form-control:focus,
+select:focus {
+    outline: none;
+    border-color: #354024 !important;
+}
+
+.form-control[readonly] {
+    background-color: #d4c8b0 !important;
+    cursor: not-allowed;
+}
+
+.option-form {
+    margin-bottom: 1.2rem;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.option-form label {
+    width: 30%;
+    text-align: left;
+    padding-right: 1rem;
+    font-weight: 600;
+    color: #354024;
+    margin-bottom: 0;
+}
+
+.option-form select {
+    width: 70%;
+}
+
+.radio-group-custom {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+}
+
+.radio-custom, .checkbox-custom {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    position: relative;
+    color: #354024;
+    font-weight: 500;
+}
+
+.radio-custom input, .checkbox-custom input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.radio-btn {
+    width: 18px;
+    height: 18px;
+    background: #E5D7C4;
+    border: 2px solid #889063;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+}
+
+.radio-custom input:checked + .radio-btn {
+    border-color: #2e7d32;
+    background: #2e7d32;
+}
+
+.radio-custom input:checked + .radio-btn::after {
+    content: "";
+    width: 8px;
+    height: 8px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 3px;
+    left: 3px;
+}
+
+.check-btn {
+    width: 18px;
+    height: 18px;
+    background: #E5D7C4;
+    border: 2px solid #889063;
+    border-radius: 4px;
+    display: inline-block;
+    position: relative;
+}
+
+.checkbox-custom input:checked + .check-btn {
+    background: #2e7d32;
+    border-color: #2e7d32;
+}
+
+.checkbox-custom input:checked + .check-btn::after {
+    content: "✓";
+    color: white;
+    font-size: 12px;
+    position: absolute;
+    top: 1px;
+    left: 3px;
+}
+
+.text-muted {
+    font-size: 0.7rem;
+    color: #6c757d;
+    display: block;
+    margin-top: 4px;
+}
+
+.subres {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+    padding-top: 1.2rem;
+    border-top: 1px solid #889063;
+}
+
+.btn-primary {
+    background-color: #354024 !important;
+    border: none !important;
+    padding: 10px 28px !important;
+    border-radius: 30px !important;
+    font-weight: 600 !important;
+    color: #E5D7C4 !important;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px !important;
+}
+
+.btn-primary:hover {
+    background-color: #4a5a30 !important;
+}
+
+.btn-secondary {
+    background-color: #889063 !important;
+    border: none !important;
+    padding: 10px 28px !important;
+    border-radius: 30px !important;
+    font-weight: 600 !important;
+    color: #354024 !important;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px !important;
+}
+
+.btn-secondary:hover {
+    background-color: #9aa870 !important;
+    color: #1e2a14 !important;
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    .form-input {
+        margin: 90px 20px 30px 20px;
+        padding: 1.5rem;
+    }
+    
+    .judul-form label:first-child {
+        font-size: 1.3rem;
+    }
+    
+    .row {
+        flex-direction: column;
+    }
+    
+    .row .col-label,
+    .row .col-input,
+    .option-form label,
+    .option-form select,
+    .radio-group {
+        width: 100%;
+        text-align: left;
+    }
+    
+    .row .col-label {
+        margin-bottom: 6px;
+    }
+    
+    .option-form label {
+        margin-bottom: 6px;
+    }
+    
+    .radio-group {
+        margin-top: 6px;
+        gap: 1rem;
+    }
+    
+    .subres {
+        flex-direction: column;
+    }
+    
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+        justify-content: center;
+    }
+}
